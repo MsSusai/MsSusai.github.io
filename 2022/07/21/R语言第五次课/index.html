@@ -20,20 +20,23 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":5,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="主要涉及生物信息学的学习，编程问题的解决与生活中的感想">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://example.com/categories/index.html">
+  <meta name="description" content="第五次课—R数据处理 变量创建 变量删除">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R语言第五次课">
+<meta property="og:url" content="http://example.com/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/index.html">
 <meta property="og:site_name" content="Susai&#39;s blog">
-<meta property="og:description" content="主要涉及生物信息学的学习，编程问题的解决与生活中的感想">
+<meta property="og:description" content="第五次课—R数据处理 变量创建 变量删除">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-18T13:20:39.000Z">
-<meta property="article:modified_time" content="2022-07-18T13:22:12.862Z">
+<meta property="og:image" content="http://example.com/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/img_33.png">
+<meta property="og:image" content="http://example.com/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/img_34.png">
+<meta property="article:published_time" content="2022-07-21T11:42:23.000Z">
+<meta property="article:modified_time" content="2022-07-21T12:17:09.855Z">
 <meta property="article:author" content="Susai">
 <meta property="article:tag" content="python, linux, R, shell">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/img_33.png">
 
-<link rel="canonical" href="http://example.com/categories/">
+<link rel="canonical" href="http://example.com/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/">
 
 
 <script id="page-configurations">
@@ -41,13 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>categories | Susai's blog
-</title>
+  <title>R语言第五次课 | Susai's blog</title>
   
 
 
@@ -179,51 +181,105 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Susai">
+      <meta itemprop="description" content="主要涉及生物信息学的学习，编程问题的解决与生活中的感想">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Susai's blog">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          R语言第五次课
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">categories
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2022-07-21 19:42:23 / 修改时间：20:17:09" itemprop="dateCreated datePublished" datetime="2022-07-21T19:42:23+08:00">2022-07-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/R%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">R语言</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="第五次课—R数据处理"><a href="#第五次课—R数据处理" class="headerlink" title="第五次课—R数据处理"></a>第五次课—R数据处理</h1><ul>
+<li>变量创建</li>
+<li>变量删除</li>
+</ul>
+<span id="more"></span>
+<hr>
+<h3 id="变量的创建与删除"><a href="#变量的创建与删除" class="headerlink" title="变量的创建与删除"></a>变量的创建与删除</h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建dataframe</span></span><br><span class="line">mydata <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span>x1 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">6</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">                     x2 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">8</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># dataframe添加列，列运算</span></span><br><span class="line">mydata<span class="operator">$</span><span class="built_in">sum</span> <span class="operator">&lt;-</span> mydata<span class="operator">$</span>x1 <span class="operator">+</span> mydata<span class="operator">$</span>x2</span><br><span class="line">mydata<span class="operator">$</span>mean <span class="operator">&lt;-</span> <span class="punctuation">(</span>mydata<span class="operator">$</span>x1 <span class="operator">+</span> mydata<span class="operator">$</span>x2<span class="punctuation">)</span> <span class="operator">/</span> <span class="number">2</span></span><br><span class="line">print<span class="punctuation">(</span>mydata<span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line">mydata <span class="operator">&lt;-</span> transform<span class="punctuation">(</span>mydata<span class="punctuation">,</span></span><br><span class="line">                    <span class="built_in">sum</span> <span class="operator">=</span> x1 <span class="operator">+</span> x2<span class="punctuation">,</span></span><br><span class="line">                    mean <span class="operator">=</span> <span class="punctuation">(</span>x1 <span class="operator">+</span> x2<span class="punctuation">)</span> <span class="operator">/</span> <span class="number">2</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#   x1 x2 sum mean</span></span><br><span class="line"><span class="comment"># 1  2  3   5  2.5</span></span><br><span class="line"><span class="comment"># 2  2  4   6  3.0</span></span><br><span class="line"><span class="comment"># 3  6  2   8  4.0</span></span><br><span class="line"><span class="comment"># 4  4  8  12  6.0</span></span><br></pre></td></tr></table></figure>
+<h4 id="变量删除（赋值为空）"><a href="#变量删除（赋值为空）" class="headerlink" title="变量删除（赋值为空）"></a>变量删除（赋值为空）</h4><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mydata<span class="operator">$</span>mean <span class="operator">&lt;-</span> <span class="literal">NULL</span></span><br></pre></td></tr></table></figure>
+<hr>
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/img_33.png" class="" title="img33">
+<hr>
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/img_34.png" class="" title="img34">
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 合并用merge()函数</span></span><br><span class="line">merge<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 针对列名称不同时的合并</span></span><br><span class="line">merge<span class="punctuation">(</span>x <span class="operator">=</span> dataA<span class="punctuation">,</span></span><br><span class="line">      y <span class="operator">=</span> dataB<span class="punctuation">,</span></span><br><span class="line">      by.x <span class="operator">=</span> <span class="string">&quot;id&quot;</span><span class="punctuation">,</span></span><br><span class="line">      by.y <span class="operator">=</span> <span class="string">&quot;storyid&quot;</span><span class="punctuation">,</span></span><br><span class="line">      all.y <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># all.y是将y全列出来，如果x没有的话填上NA值</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%9B%9B%E6%AC%A1%E8%AF%BE/" rel="prev" title="R语言第四次课">
+      <i class="fa fa-chevron-left"></i> R语言第四次课
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/" rel="next" title="R语言第六次课">
+      R语言第六次课 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              目前共计 2 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/R%E8%AF%AD%E8%A8%80/">R语言</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">博客搭建</a><span class="category-list-count">2</span></li></ul>
-            </div>
-          </div>
-        
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -274,6 +330,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE%E2%80%94R%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">第五次课—R数据处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%88%A0%E9%99%A4"><span class="nav-number">1.0.1.</span> <span class="nav-text">变量的创建与删除</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E5%88%A0%E9%99%A4%EF%BC%88%E8%B5%8B%E5%80%BC%E4%B8%BA%E7%A9%BA%EF%BC%89"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">变量删除（赋值为空）</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
