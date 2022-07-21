@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>NexT主题自定义侧边栏图标</title>
+    <url>/2022/07/21/NexT%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%9B%BE%E6%A0%87/</url>
+    <content><![CDATA[<p>NexT 主题的图标基本上都是由 Font Awesome 提供，但是知乎、CSDN、bilibili等大多数国内应用软件的图标在 5.1 版本的 Font Awesome 都不支持。为了支持侧边栏各种应用小图标的显示，可以利用嵌入svg格式的图标进行实现。  </p>
+<span id="more"></span>
+<h4 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h4><p><strong>1. 通过Font Awesome 搜索图标，比如bilibili</strong><br>选择 svg 格式下载，并将图片保存在 Hexo 文件下的 source\images 路径下，如果没有 images 文件夹，则新建 images 文件夹。（注意：这里是 Hexo下的文件夹下，不是主题文件 NexT 的路径下） </p>
+<img src="/2022/07/21/NexT%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%9B%BE%E6%A0%87/1.png" class="" title="This is an example image">
+<p><strong>2. 设置图标格式</strong><br>在 Hexo 的 source_data 路径下，新建 styles.styl 文件， 如果没有 _data 文件夹，则新建文件夹。在 style.styl 文件中设置图标样式如下：  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">/* 侧边栏图标格式设置 */</span><br><span class="line">.fa-bilibili &#123;</span><br><span class="line">  background: url(/images/bilibili.svg);</span><br><span class="line">  background-size: 1em 1em;</span><br><span class="line">  opacity: 0.55;</span><br><span class="line">  background-position: 0.05rem 0.28rem;</span><br><span class="line">  background-repeat: no-repeat;</span><br><span class="line">  height: 1rem;</span><br><span class="line">  width: 1rem; </span><br><span class="line">  border-radius: 0rem;</span><br><span class="line">  /*鼠标停留在图标上时，图标呈现发光效果*/</span><br><span class="line">  &amp;:hover &#123;</span><br><span class="line">      opacity: 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3. 设置主题配置文件 _config 参数</strong><br>在 NexT 文件夹下的 _config.yml 设置自定义文件夹路径，找到 custom_file_path 下，取消对 style 路径的注释  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">custom_file_path:</span><br><span class="line">  #head: source/_data/head.njk</span><br><span class="line">  #header: source/_data/header.njk</span><br><span class="line">  #sidebar: source/_data/sidebar.njk</span><br><span class="line">  #postMeta: source/_data/post-meta.njk</span><br><span class="line">  #postBodyEnd: source/_data/post-body-end.njk</span><br><span class="line">  #footer: source/_data/footer.njk</span><br><span class="line">  #bodyEnd: source/_data/body-end.njk</span><br><span class="line">  #variable: source/_data/variables.styl</span><br><span class="line">  #mixin: source/_data/mixins.styl</span><br><span class="line">  style: source/_data/styles.styl</span><br></pre></td></tr></table></figure>
+<p><strong>4. 对 social 的图标进行设置如下</strong>  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">social:</span><br><span class="line">  bilibili: https://space.bilibili.com/13356120 || fab fa-bilibili</span><br></pre></td></tr></table></figure>
+<h4 id="最终结果："><a href="#最终结果：" class="headerlink" title="最终结果："></a>最终结果：</h4><img src="/2022/07/21/NexT%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%9B%BE%E6%A0%87/2.png" class="" title="This is an example image">]]></content>
+      <categories>
+        <category>博客搭建</category>
+      </categories>
+  </entry>
+</search>
