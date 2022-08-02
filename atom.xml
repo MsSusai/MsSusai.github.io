@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-21T12:34:44.892Z</updated>
+  <updated>2022-08-02T12:51:01.296Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>文献综述怎么写</title>
+    <link href="http://example.com/2022/08/02/%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0%E6%80%8E%E4%B9%88%E5%86%99/"/>
+    <id>http://example.com/2022/08/02/%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0%E6%80%8E%E4%B9%88%E5%86%99/</id>
+    <published>2022-08-02T12:36:10.000Z</published>
+    <updated>2022-08-02T12:51:01.296Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>文献综述可以分为两种类型</li></ul><ol><li>了解这个领域的研究主题、理论、方法</li><li>写论文所需要完成的文献综述</li></ol><ul><li>文献综述写作划分为两种风格</li></ul><ol><li>列举总结型</li><li>夹叙夹议型</li></ol><ul><li>文献综述与论文研究内容的关系</li></ul><span id="more"></span><h1 id="文献综述可以分为两种类型："><a href="#文献综述可以分为两种类型：" class="headerlink" title="文献综述可以分为两种类型："></a>文献综述可以分为两种类型：</h1><ol><li>在初识一个领域之时，为了了解这个领域的研究主题、理论、方法等等  </li><li>在确定论文写作主题之后，写论文所需要完成的文献综述（论文中的一部分）  </li></ol><h1 id="文献综述写作划分为两种风格："><a href="#文献综述写作划分为两种风格：" class="headerlink" title="文献综述写作划分为两种风格："></a>文献综述写作划分为两种风格：</h1><ol><li>列举总结型<br>适合长篇幅，针对某一个综述类别，举例说明，并在最后总结述评<br>A学者基于xx理论提出xx方法得出xx结论；B学者基于xx理论提出xx方法得出xx结论等等。总而言之，现有研究已经在xx方面取得了xx成果，但是xx研究还存在不足之处</li><li>夹叙夹议型<br>适合短篇幅，将相同类型、相同研究对象、相同研究方法、相同理论基础等等具有共性的文献放在一起进行总结述评<br>针对xx研究有（a，b，c学者）已经有xx成果  </li></ol><p>“综”要综合阅读，列举多篇文献；“述”要进行阐述或评述  </p><h1 id="文献综述与论文研究内容的关系"><a href="#文献综述与论文研究内容的关系" class="headerlink" title="文献综述与论文研究内容的关系"></a>文献综述与论文研究内容的关系</h1><p>论文的核心在于什么？在于创新<br>创新的根本在于什么？在于跟别人研究的不同与改进<br>文献综述的最根本作用是什么？在于告诉我们别人研究的不足在哪？我们下一步就是针对这个干点什么…  </p>]]></content>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;文献综述可以分为两种类型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;了解这个领域的研究主题、理论、方法&lt;/li&gt;
+&lt;li&gt;写论文所需要完成的文献综述&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;文献综述写作划分为两种风格&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;列举总结型&lt;/li&gt;
+&lt;li&gt;夹叙夹议型&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;文献综述与论文研究内容的关系&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="研究与论文写作" scheme="http://example.com/categories/%E7%A0%94%E7%A9%B6%E4%B8%8E%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>研究初期寻找文献与思路的方法</title>
+    <link href="http://example.com/2022/08/02/%E7%A0%94%E7%A9%B6%E5%88%9D%E6%9C%9F%E5%AF%BB%E6%89%BE%E6%96%87%E7%8C%AE%E4%B8%8E%E6%80%9D%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>http://example.com/2022/08/02/%E7%A0%94%E7%A9%B6%E5%88%9D%E6%9C%9F%E5%AF%BB%E6%89%BE%E6%96%87%E7%8C%AE%E4%B8%8E%E6%80%9D%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/</id>
+    <published>2022-08-02T11:49:31.000Z</published>
+    <updated>2022-08-02T12:06:05.372Z</updated>
+    
+    <content type="html"><![CDATA[<p>问题：导师说去看xxx领域的文章，找一下思路</p><ul><li>如何找到合适、高质量的文献？</li><li>怎么看文献？怎么找思路？</li><li>看了很多文献之后，有思路了，下面做什么？</li><li>具体学习</li></ul><span id="more"></span><p><strong>1. 如何找到合适、高质量的文献？</strong><br>使用<code>主题检索法</code>和<code>引文法</code><br><strong>偷懒的方法</strong>  </p><ul><li>知网的核心期刊，web of science</li><li>导师发的论文</li><li>导师发的论文的参考文献所在期刊的论文</li></ul><p><strong>进阶方法</strong></p><ul><li>研究领域的高级别期刊</li><li>研究领域的大牛，大牛发表的文章</li></ul><p><strong>2. 怎么看文献？怎么找思路？</strong><br>找到合格、高质量的文献之后，用文献阅读软件或者EXCEL，生成一个<code>读书笔记表格</code><br>表格中的每一行代表一篇文献<br>每一列代表文献的属性（作者、期刊、研究问题、研究方法、结论等）  </p><p><strong>3. 看了很多文献之后，有思路了，下面做什么？</strong><br><code>思路就是准备研究和解决什么问题</code></p><ol><li>这个问题你看的文献中有人研究过嘛？  </li><li>别人怎么研究的？  </li><li>你跟别人比，有什么不一样或者更好地方？  </li><li>你准备研究的过程、方法、思路，你会嘛？ </li></ol><p><strong>4. 具体学习</strong>  </p><ol><li>思路向导师汇报，看看是否可行？</li><li>可行的话，研究方法会吗？不会的话找各种资料（书籍，论文等）</li><li>学会之后，开始做（可能失败）</li><li>做完之后开始写（无数次的写作与修改）</li></ol><p>如果没思路，去扒拉一篇高质量的中文核心期刊综述。照葫芦画瓢不算难。一方面中文核心期刊再怎么不济也有一定水平，另一方面中文比英语理解起来相对简单，启发性比较高  </p><p>找到几篇相关领域的顶刊，从简介里面了解一下大致研究现状，然后从简介里找参考文献，最好是书，从书籍里面了解详细的理论研究过程，再回过来看文献简介里面的最后一段，了解文献的工作，如果是我要的，就往下看看，看看结果讨论……到了这里基本上就能把相关领域的研究现状和自己要做的东西了解个大概了</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;问题：导师说去看xxx领域的文章，找一下思路&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如何找到合适、高质量的文献？&lt;/li&gt;
+&lt;li&gt;怎么看文献？怎么找思路？&lt;/li&gt;
+&lt;li&gt;看了很多文献之后，有思路了，下面做什么？&lt;/li&gt;
+&lt;li&gt;具体学习&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="研究与论文写作" scheme="http://example.com/categories/%E7%A0%94%E7%A9%B6%E4%B8%8E%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>R语言第六次课</title>
