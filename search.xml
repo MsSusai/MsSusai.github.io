@@ -133,6 +133,123 @@ provide shell access.</code> 就表示一切正常了。 </p>
       </categories>
   </entry>
   <entry>
+    <title>R语言第六次课</title>
+    <url>/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/</url>
+    <content><![CDATA[<h1 id="第六次课—R绘图与控制结构"><a href="#第六次课—R绘图与控制结构" class="headerlink" title="第六次课—R绘图与控制结构"></a>第六次课—R绘图与控制结构</h1><ul>
+<li>柱形图</li>
+<li>饼图</li>
+<li>散点图</li>
+<li>控制结构</li>
+<li>函数</li>
+</ul>
+<span id="more"></span>
+<hr>
+<h3 id="柱形图"><a href="#柱形图" class="headerlink" title="柱形图"></a>柱形图</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_36.png" class="" title="img36">
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_37.png" class="" title="img37">
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_38.png" class="" title="img38">
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_39.png" class="" title="img39">
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_40.png" class="" title="img40">
+<hr>
+<h3 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_41.png" class="" title="img41">
+<hr>
+<h3 id="散点图"><a href="#散点图" class="headerlink" title="散点图"></a>散点图</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_42.png" class="" title="img42">
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_43.png" class="" title="img43">
+<hr>
+<h3 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h3><h4 id="常见控制结构的命令："><a href="#常见控制结构的命令：" class="headerlink" title="常见控制结构的命令："></a>常见控制结构的命令：</h4><ul>
+<li><code>if and else</code>: 测试逻辑条件</li>
+<li><code>for</code>: 用于执行固定次数的循环</li>
+<li><code>while</code>: 用于在某个条件成立时执行循环</li>
+<li><code>repeat</code>: 执行无限循环</li>
+<li><code>break</code>: 终止并跳出循环</li>
+<li><code>next</code>: 跳过循环中的当前迭代</li>
+<li><code>return</code>: 从函数中退出</li>
+</ul>
+<h4 id="if控制结构"><a href="#if控制结构" class="headerlink" title="if控制结构"></a>if控制结构</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="punctuation">(</span> <span class="operator">&lt;</span> condition1 <span class="operator">&gt;</span><span class="punctuation">)</span><span class="punctuation">&#123;</span></span><br><span class="line"><span class="comment">## do something</span></span><br><span class="line"><span class="punctuation">&#125;</span> <span class="keyword">else</span> <span class="keyword">if</span><span class="punctuation">(</span><span class="operator">&lt;</span>condition2<span class="operator">&gt;</span><span class="punctuation">)</span><span class="punctuation">&#123;</span></span><br><span class="line"><span class="comment">## do something different</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="keyword">else</span><span class="punctuation">&#123;</span></span><br><span class="line"><span class="comment">## do something different</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><ul>
+<li>第一种方法是将循环向量和向量x的长度相对应：</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">x <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;a&quot;</span><span class="punctuation">,</span> <span class="string">&quot;b&quot;</span><span class="punctuation">,</span> <span class="string">&quot;c&quot;</span><span class="punctuation">,</span> <span class="string">&quot;d&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="keyword">for</span> <span class="punctuation">(</span>i <span class="keyword">in</span> <span class="number">1</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  print<span class="punctuation">(</span>x<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二个方法，使用<code>seq_along()</code>函数，即，输入一个向量，之后它就会创造一个与该向量等长的整数数列。因此上面的例子可以改写成，在我们不知道x的向量长度时，可以使用这种写法：</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">x <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;a&quot;</span><span class="punctuation">,</span> <span class="string">&quot;b&quot;</span><span class="punctuation">,</span> <span class="string">&quot;c&quot;</span><span class="punctuation">,</span> <span class="string">&quot;d&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="keyword">for</span> <span class="punctuation">(</span>i <span class="keyword">in</span> <span class="built_in">seq_along</span><span class="punctuation">(</span>x<span class="punctuation">)</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  print<span class="punctuation">(</span>x<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>第三个方法，下标变量letter，这个变量的本意就是一个下标，会从向量本身取值，它可以从任意向量中提取元素，因此可以写成：</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">x <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;a&quot;</span><span class="punctuation">,</span> <span class="string">&quot;b&quot;</span><span class="punctuation">,</span> <span class="string">&quot;c&quot;</span><span class="punctuation">,</span> <span class="string">&quot;d&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="keyword">for</span> <span class="punctuation">(</span><span class="built_in">letters</span> <span class="keyword">in</span> x<span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  print<span class="punctuation">(</span><span class="built_in">letters</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="While-循环"><a href="#While-循环" class="headerlink" title="While 循环"></a>While 循环</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">z <span class="operator">&lt;-</span> 5</span><br><span class="line"><span class="keyword">while</span> <span class="punctuation">(</span>z <span class="operator">&gt;=</span> <span class="number">3</span> <span class="operator">&amp;&amp;</span> z <span class="operator">&lt;=</span> <span class="number">10</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  coin <span class="operator">&lt;-</span> rbinom<span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">1</span><span class="punctuation">,</span> <span class="number">0.5</span><span class="punctuation">)</span></span><br><span class="line">  <span class="keyword">if</span> <span class="punctuation">(</span>coin <span class="operator">==</span> <span class="number">1</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span>  <span class="comment">## random walk</span></span><br><span class="line">    z <span class="operator">&lt;-</span> z <span class="operator">+</span> <span class="number">1</span></span><br><span class="line">  <span class="punctuation">&#125;</span> <span class="keyword">else</span> <span class="punctuation">&#123;</span></span><br><span class="line">    z <span class="operator">&lt;-</span> z <span class="operator">-</span> <span class="number">1</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="repeat循环"><a href="#repeat循环" class="headerlink" title="repeat循环"></a>repeat循环</h4><p>这是一个无限循环结构，退出的方法是<code>break</code>（在某个点强制退出）。</p>
+<p>注意，<code>repeat</code>循环风险很大，因为没硬性规定何时退出，有可能运行时间非常长，所以不建议直接使用</p>
+<hr>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">function_name <span class="operator">&lt;-</span> <span class="keyword">function</span><span class="punctuation">(</span>arg_1<span class="punctuation">,</span> arg_2<span class="punctuation">,</span> ...<span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="comment"># 函数体</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>函数返回值使用 <code>return()</code></p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建函数</span></span><br><span class="line">new.function <span class="operator">&lt;-</span> <span class="keyword">function</span><span class="punctuation">(</span>a<span class="punctuation">,</span> b<span class="punctuation">,</span> <span class="built_in">c</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  result <span class="operator">&lt;-</span> a <span class="operator">*</span> b <span class="operator">+</span> <span class="built_in">c</span></span><br><span class="line">  print<span class="punctuation">(</span>result<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 不带参数名</span></span><br><span class="line">new.function<span class="punctuation">(</span><span class="number">5</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">,</span> <span class="number">11</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 带参数名</span></span><br><span class="line">new.function<span class="punctuation">(</span>a <span class="operator">=</span> <span class="number">11</span><span class="punctuation">,</span> b <span class="operator">=</span> <span class="number">5</span><span class="punctuation">,</span> <span class="built_in">c</span> <span class="operator">=</span> <span class="number">3</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>R语言</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>R语言第五次课</title>
+    <url>/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/</url>
+    <content><![CDATA[<h1 id="第五次课—R数据处理"><a href="#第五次课—R数据处理" class="headerlink" title="第五次课—R数据处理"></a>第五次课—R数据处理</h1><ul>
+<li>变量创建</li>
+<li>变量删除</li>
+</ul>
+<span id="more"></span>
+<hr>
+<h3 id="变量的创建与删除"><a href="#变量的创建与删除" class="headerlink" title="变量的创建与删除"></a>变量的创建与删除</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建dataframe</span></span><br><span class="line">mydata <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span>x1 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">6</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">                     x2 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">8</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># dataframe添加列，列运算</span></span><br><span class="line">mydata<span class="operator">$</span><span class="built_in">sum</span> <span class="operator">&lt;-</span> mydata<span class="operator">$</span>x1 <span class="operator">+</span> mydata<span class="operator">$</span>x2</span><br><span class="line">mydata<span class="operator">$</span>mean <span class="operator">&lt;-</span> <span class="punctuation">(</span>mydata<span class="operator">$</span>x1 <span class="operator">+</span> mydata<span class="operator">$</span>x2<span class="punctuation">)</span> <span class="operator">/</span> <span class="number">2</span></span><br><span class="line">print<span class="punctuation">(</span>mydata<span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line">mydata <span class="operator">&lt;-</span> transform<span class="punctuation">(</span>mydata<span class="punctuation">,</span></span><br><span class="line">                    <span class="built_in">sum</span> <span class="operator">=</span> x1 <span class="operator">+</span> x2<span class="punctuation">,</span></span><br><span class="line">                    mean <span class="operator">=</span> <span class="punctuation">(</span>x1 <span class="operator">+</span> x2<span class="punctuation">)</span> <span class="operator">/</span> <span class="number">2</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#   x1 x2 sum mean</span></span><br><span class="line"><span class="comment"># 1  2  3   5  2.5</span></span><br><span class="line"><span class="comment"># 2  2  4   6  3.0</span></span><br><span class="line"><span class="comment"># 3  6  2   8  4.0</span></span><br><span class="line"><span class="comment"># 4  4  8  12  6.0</span></span><br></pre></td></tr></table></figure>
+<h4 id="变量删除（赋值为空）"><a href="#变量删除（赋值为空）" class="headerlink" title="变量删除（赋值为空）"></a>变量删除（赋值为空）</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">mydata<span class="operator">$</span>mean <span class="operator">&lt;-</span> <span class="literal">NULL</span></span><br></pre></td></tr></table></figure>
+<hr>
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/img_33.png" class="" title="img33">
+<hr>
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/img_34.png" class="" title="img34">
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 合并用merge()函数</span></span><br><span class="line">merge<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 针对列名称不同时的合并</span></span><br><span class="line">merge<span class="punctuation">(</span>x <span class="operator">=</span> dataA<span class="punctuation">,</span></span><br><span class="line">      y <span class="operator">=</span> dataB<span class="punctuation">,</span></span><br><span class="line">      by.x <span class="operator">=</span> <span class="string">&quot;id&quot;</span><span class="punctuation">,</span></span><br><span class="line">      by.y <span class="operator">=</span> <span class="string">&quot;storyid&quot;</span><span class="punctuation">,</span></span><br><span class="line">      all.y <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># all.y是将y全列出来，如果x没有的话填上NA值</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>R语言</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>R语言第三次课</title>
+    <url>/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E6%AC%A1%E8%AF%BE/</url>
+    <content><![CDATA[<h1 id="第三次课—R常用函数"><a href="#第三次课—R常用函数" class="headerlink" title="第三次课—R常用函数"></a>第三次课—R常用函数</h1><ul>
+<li>因子</li>
+<li>常用数据的创建</li>
+<li>数据的读写</li>
+</ul>
+<span id="more"></span>
+<hr>
+<h3 id="因子"><a href="#因子" class="headerlink" title="因子"></a>因子</h3><p>分类属性类型可分为<code>无序因子</code>（factor）：<br>如用户ID用“1”，“2”，“3”表示<br>没有高低之分</p>
+<p><code>有序因子</code>（ordered）：<br>如用户对商品的评分值“A”,”B”,”C”,”D”,”E”<br>各个类别间存在大小高低顺序</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a1 <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">)</span></span><br><span class="line">factor1 <span class="operator">&lt;-</span> as.factor<span class="punctuation">(</span>a1<span class="punctuation">)</span></span><br><span class="line">print<span class="punctuation">(</span><span class="string">&quot;无序因子：&quot;</span><span class="punctuation">)</span></span><br><span class="line">print<span class="punctuation">(</span>factor1<span class="punctuation">)</span></span><br><span class="line">ordered <span class="operator">&lt;-</span> as.ordered<span class="punctuation">(</span>a1<span class="punctuation">)</span></span><br><span class="line">print<span class="punctuation">(</span><span class="string">&quot;有序因子：&quot;</span><span class="punctuation">)</span></span><br><span class="line">print<span class="punctuation">(</span>ordered<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[1] &quot;无序因子：&quot;</span><br><span class="line">[1] 1 2 3</span><br><span class="line">Levels: 1 2 3</span><br><span class="line">[1] &quot;有序因子：&quot;</span><br><span class="line">[1] 1 2 3</span><br><span class="line">Levels: 1 &lt; 2 &lt;3</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="常用数据的创建"><a href="#常用数据的创建" class="headerlink" title="常用数据的创建"></a>常用数据的创建</h3><p>因子序列创建 <code>gl</code></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">gl<span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">,</span> labels <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;one&quot;</span><span class="punctuation">,</span> <span class="string">&quot;two&quot;</span><span class="punctuation">,</span> <span class="string">&quot;three&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[1] one   one   one   one   two   two   two   two three three three three</span><br><span class="line">Levels:onetwothree</span><br></pre></td></tr></table></figure>
+<p>等差序列创建 <code>seq</code></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">seq<span class="punctuation">(</span>from <span class="operator">=</span> <span class="number">1</span><span class="punctuation">,</span> to <span class="operator">=</span> <span class="number">1</span><span class="punctuation">,</span> by <span class="operator">=</span> <span class="punctuation">(</span><span class="punctuation">(</span>to <span class="operator">-</span> from<span class="punctuation">)</span> <span class="operator">/</span> <span class="punctuation">(</span>length.out <span class="operator">-</span> <span class="number">1</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<p><code>length.out</code>：产生向量的长度</p>
+<p>随机抽样 <code>sample</code></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">sample<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">20</span><span class="punctuation">)</span><span class="punctuation">,</span> size <span class="operator">=</span> <span class="number">10</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[1] 16  3  7  4  5 10  9  61120</span><br></pre></td></tr></table></figure>
+<p>重复序列 <code>rep</code></p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="built_in">rep</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">3</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[1] 1 2 3 1 2 3 1 23</span><br></pre></td></tr></table></figure>
+<p>概率分布：正态分布 <code>norm</code><br><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E6%AC%A1%E8%AF%BE/img_24.png" class="" title="img24"></p>
+<hr>
+<h3 id="数据的读写"><a href="#数据的读写" class="headerlink" title="数据的读写"></a>数据的读写</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">read.table<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment"># 读取txt</span></span><br><span class="line">read.csv<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment"># 读取csv</span></span><br><span class="line">scan<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment"># 读取较大的文件速度会快一些，读文本数据到向量中</span></span><br></pre></td></tr></table></figure>
+<h3 id="通过键盘输入数据"><a href="#通过键盘输入数据" class="headerlink" title="通过键盘输入数据"></a>通过键盘输入数据</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">对象名 <span class="operator">&lt;-</span> scan<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h3 id="输出数据"><a href="#输出数据" class="headerlink" title="输出数据"></a>输出数据</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E6%AC%A1%E8%AF%BE/img_27.png" class="" title="img27">
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 具体写入函数</span></span><br><span class="line">write.csv<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line">write.table<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>R语言</category>
+      </categories>
+  </entry>
+  <entry>
     <title>R语言第二次课</title>
     <url>/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/</url>
     <content><![CDATA[<h1 id="第二次课—R的对象"><a href="#第二次课—R的对象" class="headerlink" title="第二次课—R的对象"></a>第二次课—R的对象</h1><ul>
@@ -193,123 +310,6 @@ provide shell access.</code> 就表示一切正常了。 </p>
 <h3 id="数据框"><a href="#数据框" class="headerlink" title="数据框"></a>数据框</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_17.png" class="" title="img17">
 <img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_18.png" class="" title="img18">
 <p>数据框列引用也可以 <code>x[,2]</code>,就不用<code>x[[2]]</code>索引了</p>
-]]></content>
-      <categories>
-        <category>R语言</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>R语言第三次课</title>
-    <url>/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E6%AC%A1%E8%AF%BE/</url>
-    <content><![CDATA[<h1 id="第三次课—R常用函数"><a href="#第三次课—R常用函数" class="headerlink" title="第三次课—R常用函数"></a>第三次课—R常用函数</h1><ul>
-<li>因子</li>
-<li>常用数据的创建</li>
-<li>数据的读写</li>
-</ul>
-<span id="more"></span>
-<hr>
-<h3 id="因子"><a href="#因子" class="headerlink" title="因子"></a>因子</h3><p>分类属性类型可分为<code>无序因子</code>（factor）：<br>如用户ID用“1”，“2”，“3”表示<br>没有高低之分</p>
-<p><code>有序因子</code>（ordered）：<br>如用户对商品的评分值“A”,”B”,”C”,”D”,”E”<br>各个类别间存在大小高低顺序</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a1 <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">)</span></span><br><span class="line">factor1 <span class="operator">&lt;-</span> as.factor<span class="punctuation">(</span>a1<span class="punctuation">)</span></span><br><span class="line">print<span class="punctuation">(</span><span class="string">&quot;无序因子：&quot;</span><span class="punctuation">)</span></span><br><span class="line">print<span class="punctuation">(</span>factor1<span class="punctuation">)</span></span><br><span class="line">ordered <span class="operator">&lt;-</span> as.ordered<span class="punctuation">(</span>a1<span class="punctuation">)</span></span><br><span class="line">print<span class="punctuation">(</span><span class="string">&quot;有序因子：&quot;</span><span class="punctuation">)</span></span><br><span class="line">print<span class="punctuation">(</span>ordered<span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<h3 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[1] &quot;无序因子：&quot;</span><br><span class="line">[1] 1 2 3</span><br><span class="line">Levels: 1 2 3</span><br><span class="line">[1] &quot;有序因子：&quot;</span><br><span class="line">[1] 1 2 3</span><br><span class="line">Levels: 1 &lt; 2 &lt;3</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="常用数据的创建"><a href="#常用数据的创建" class="headerlink" title="常用数据的创建"></a>常用数据的创建</h3><p>因子序列创建 <code>gl</code></p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">gl<span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">,</span> labels <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;one&quot;</span><span class="punctuation">,</span> <span class="string">&quot;two&quot;</span><span class="punctuation">,</span> <span class="string">&quot;three&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[1] one   one   one   one   two   two   two   two three three three three</span><br><span class="line">Levels:onetwothree</span><br></pre></td></tr></table></figure>
-<p>等差序列创建 <code>seq</code></p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">seq<span class="punctuation">(</span>from <span class="operator">=</span> <span class="number">1</span><span class="punctuation">,</span> to <span class="operator">=</span> <span class="number">1</span><span class="punctuation">,</span> by <span class="operator">=</span> <span class="punctuation">(</span><span class="punctuation">(</span>to <span class="operator">-</span> from<span class="punctuation">)</span> <span class="operator">/</span> <span class="punctuation">(</span>length.out <span class="operator">-</span> <span class="number">1</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<p><code>length.out</code>：产生向量的长度</p>
-<p>随机抽样 <code>sample</code></p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">sample<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">20</span><span class="punctuation">)</span><span class="punctuation">,</span> size <span class="operator">=</span> <span class="number">10</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[1] 16  3  7  4  5 10  9  61120</span><br></pre></td></tr></table></figure>
-<p>重复序列 <code>rep</code></p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="built_in">rep</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">3</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[1] 1 2 3 1 2 3 1 23</span><br></pre></td></tr></table></figure>
-<p>概率分布：正态分布 <code>norm</code><br><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E6%AC%A1%E8%AF%BE/img_24.png" class="" title="img24"></p>
-<hr>
-<h3 id="数据的读写"><a href="#数据的读写" class="headerlink" title="数据的读写"></a>数据的读写</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">read.table<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment"># 读取txt</span></span><br><span class="line">read.csv<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment"># 读取csv</span></span><br><span class="line">scan<span class="punctuation">(</span><span class="punctuation">)</span> <span class="comment"># 读取较大的文件速度会快一些，读文本数据到向量中</span></span><br></pre></td></tr></table></figure>
-<h3 id="通过键盘输入数据"><a href="#通过键盘输入数据" class="headerlink" title="通过键盘输入数据"></a>通过键盘输入数据</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">对象名 <span class="operator">&lt;-</span> scan<span class="punctuation">(</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<h3 id="输出数据"><a href="#输出数据" class="headerlink" title="输出数据"></a>输出数据</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E6%AC%A1%E8%AF%BE/img_27.png" class="" title="img27">
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 具体写入函数</span></span><br><span class="line">write.csv<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line">write.table<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>R语言</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>R语言第五次课</title>
-    <url>/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/</url>
-    <content><![CDATA[<h1 id="第五次课—R数据处理"><a href="#第五次课—R数据处理" class="headerlink" title="第五次课—R数据处理"></a>第五次课—R数据处理</h1><ul>
-<li>变量创建</li>
-<li>变量删除</li>
-</ul>
-<span id="more"></span>
-<hr>
-<h3 id="变量的创建与删除"><a href="#变量的创建与删除" class="headerlink" title="变量的创建与删除"></a>变量的创建与删除</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建dataframe</span></span><br><span class="line">mydata <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span>x1 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">6</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">                     x2 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">8</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># dataframe添加列，列运算</span></span><br><span class="line">mydata<span class="operator">$</span><span class="built_in">sum</span> <span class="operator">&lt;-</span> mydata<span class="operator">$</span>x1 <span class="operator">+</span> mydata<span class="operator">$</span>x2</span><br><span class="line">mydata<span class="operator">$</span>mean <span class="operator">&lt;-</span> <span class="punctuation">(</span>mydata<span class="operator">$</span>x1 <span class="operator">+</span> mydata<span class="operator">$</span>x2<span class="punctuation">)</span> <span class="operator">/</span> <span class="number">2</span></span><br><span class="line">print<span class="punctuation">(</span>mydata<span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line">mydata <span class="operator">&lt;-</span> transform<span class="punctuation">(</span>mydata<span class="punctuation">,</span></span><br><span class="line">                    <span class="built_in">sum</span> <span class="operator">=</span> x1 <span class="operator">+</span> x2<span class="punctuation">,</span></span><br><span class="line">                    mean <span class="operator">=</span> <span class="punctuation">(</span>x1 <span class="operator">+</span> x2<span class="punctuation">)</span> <span class="operator">/</span> <span class="number">2</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#   x1 x2 sum mean</span></span><br><span class="line"><span class="comment"># 1  2  3   5  2.5</span></span><br><span class="line"><span class="comment"># 2  2  4   6  3.0</span></span><br><span class="line"><span class="comment"># 3  6  2   8  4.0</span></span><br><span class="line"><span class="comment"># 4  4  8  12  6.0</span></span><br></pre></td></tr></table></figure>
-<h4 id="变量删除（赋值为空）"><a href="#变量删除（赋值为空）" class="headerlink" title="变量删除（赋值为空）"></a>变量删除（赋值为空）</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">mydata<span class="operator">$</span>mean <span class="operator">&lt;-</span> <span class="literal">NULL</span></span><br></pre></td></tr></table></figure>
-<hr>
-<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/img_33.png" class="" title="img33">
-<hr>
-<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/img_34.png" class="" title="img34">
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 合并用merge()函数</span></span><br><span class="line">merge<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 针对列名称不同时的合并</span></span><br><span class="line">merge<span class="punctuation">(</span>x <span class="operator">=</span> dataA<span class="punctuation">,</span></span><br><span class="line">      y <span class="operator">=</span> dataB<span class="punctuation">,</span></span><br><span class="line">      by.x <span class="operator">=</span> <span class="string">&quot;id&quot;</span><span class="punctuation">,</span></span><br><span class="line">      by.y <span class="operator">=</span> <span class="string">&quot;storyid&quot;</span><span class="punctuation">,</span></span><br><span class="line">      all.y <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># all.y是将y全列出来，如果x没有的话填上NA值</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>R语言</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>R语言第六次课</title>
-    <url>/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/</url>
-    <content><![CDATA[<h1 id="第六次课—R绘图与控制结构"><a href="#第六次课—R绘图与控制结构" class="headerlink" title="第六次课—R绘图与控制结构"></a>第六次课—R绘图与控制结构</h1><ul>
-<li>柱形图</li>
-<li>饼图</li>
-<li>散点图</li>
-<li>控制结构</li>
-<li>函数</li>
-</ul>
-<span id="more"></span>
-<hr>
-<h3 id="柱形图"><a href="#柱形图" class="headerlink" title="柱形图"></a>柱形图</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_36.png" class="" title="img36">
-<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_37.png" class="" title="img37">
-<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_38.png" class="" title="img38">
-<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_39.png" class="" title="img39">
-<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_40.png" class="" title="img40">
-<hr>
-<h3 id="饼图"><a href="#饼图" class="headerlink" title="饼图"></a>饼图</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_41.png" class="" title="img41">
-<hr>
-<h3 id="散点图"><a href="#散点图" class="headerlink" title="散点图"></a>散点图</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_42.png" class="" title="img42">
-<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E5%85%AD%E6%AC%A1%E8%AF%BE/img_43.png" class="" title="img43">
-<hr>
-<h3 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h3><h4 id="常见控制结构的命令："><a href="#常见控制结构的命令：" class="headerlink" title="常见控制结构的命令："></a>常见控制结构的命令：</h4><ul>
-<li><code>if and else</code>: 测试逻辑条件</li>
-<li><code>for</code>: 用于执行固定次数的循环</li>
-<li><code>while</code>: 用于在某个条件成立时执行循环</li>
-<li><code>repeat</code>: 执行无限循环</li>
-<li><code>break</code>: 终止并跳出循环</li>
-<li><code>next</code>: 跳过循环中的当前迭代</li>
-<li><code>return</code>: 从函数中退出</li>
-</ul>
-<h4 id="if控制结构"><a href="#if控制结构" class="headerlink" title="if控制结构"></a>if控制结构</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="punctuation">(</span> <span class="operator">&lt;</span> condition1 <span class="operator">&gt;</span><span class="punctuation">)</span><span class="punctuation">&#123;</span></span><br><span class="line"><span class="comment">## do something</span></span><br><span class="line"><span class="punctuation">&#125;</span> <span class="keyword">else</span> <span class="keyword">if</span><span class="punctuation">(</span><span class="operator">&lt;</span>condition2<span class="operator">&gt;</span><span class="punctuation">)</span><span class="punctuation">&#123;</span></span><br><span class="line"><span class="comment">## do something different</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="keyword">else</span><span class="punctuation">&#123;</span></span><br><span class="line"><span class="comment">## do something different</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><ul>
-<li>第一种方法是将循环向量和向量x的长度相对应：</li>
-</ul>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">x <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;a&quot;</span><span class="punctuation">,</span> <span class="string">&quot;b&quot;</span><span class="punctuation">,</span> <span class="string">&quot;c&quot;</span><span class="punctuation">,</span> <span class="string">&quot;d&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="keyword">for</span> <span class="punctuation">(</span>i <span class="keyword">in</span> <span class="number">1</span><span class="operator">:</span><span class="number">4</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  print<span class="punctuation">(</span>x<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>第二个方法，使用<code>seq_along()</code>函数，即，输入一个向量，之后它就会创造一个与该向量等长的整数数列。因此上面的例子可以改写成，在我们不知道x的向量长度时，可以使用这种写法：</li>
-</ul>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">x <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;a&quot;</span><span class="punctuation">,</span> <span class="string">&quot;b&quot;</span><span class="punctuation">,</span> <span class="string">&quot;c&quot;</span><span class="punctuation">,</span> <span class="string">&quot;d&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="keyword">for</span> <span class="punctuation">(</span>i <span class="keyword">in</span> <span class="built_in">seq_along</span><span class="punctuation">(</span>x<span class="punctuation">)</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  print<span class="punctuation">(</span>x<span class="punctuation">[</span>i<span class="punctuation">]</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>第三个方法，下标变量letter，这个变量的本意就是一个下标，会从向量本身取值，它可以从任意向量中提取元素，因此可以写成：</li>
-</ul>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">x <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;a&quot;</span><span class="punctuation">,</span> <span class="string">&quot;b&quot;</span><span class="punctuation">,</span> <span class="string">&quot;c&quot;</span><span class="punctuation">,</span> <span class="string">&quot;d&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="keyword">for</span> <span class="punctuation">(</span><span class="built_in">letters</span> <span class="keyword">in</span> x<span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  print<span class="punctuation">(</span><span class="built_in">letters</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h4 id="While-循环"><a href="#While-循环" class="headerlink" title="While 循环"></a>While 循环</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">z <span class="operator">&lt;-</span> 5</span><br><span class="line"><span class="keyword">while</span> <span class="punctuation">(</span>z <span class="operator">&gt;=</span> <span class="number">3</span> <span class="operator">&amp;&amp;</span> z <span class="operator">&lt;=</span> <span class="number">10</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  coin <span class="operator">&lt;-</span> rbinom<span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">1</span><span class="punctuation">,</span> <span class="number">0.5</span><span class="punctuation">)</span></span><br><span class="line">  <span class="keyword">if</span> <span class="punctuation">(</span>coin <span class="operator">==</span> <span class="number">1</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span>  <span class="comment">## random walk</span></span><br><span class="line">    z <span class="operator">&lt;-</span> z <span class="operator">+</span> <span class="number">1</span></span><br><span class="line">  <span class="punctuation">&#125;</span> <span class="keyword">else</span> <span class="punctuation">&#123;</span></span><br><span class="line">    z <span class="operator">&lt;-</span> z <span class="operator">-</span> <span class="number">1</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h4 id="repeat循环"><a href="#repeat循环" class="headerlink" title="repeat循环"></a>repeat循环</h4><p>这是一个无限循环结构，退出的方法是<code>break</code>（在某个点强制退出）。</p>
-<p>注意，<code>repeat</code>循环风险很大，因为没硬性规定何时退出，有可能运行时间非常长，所以不建议直接使用</p>
-<hr>
-<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">function_name <span class="operator">&lt;-</span> <span class="keyword">function</span><span class="punctuation">(</span>arg_1<span class="punctuation">,</span> arg_2<span class="punctuation">,</span> ...<span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  <span class="comment"># 函数体</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>函数返回值使用 <code>return()</code></p>
-<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建函数</span></span><br><span class="line">new.function <span class="operator">&lt;-</span> <span class="keyword">function</span><span class="punctuation">(</span>a<span class="punctuation">,</span> b<span class="punctuation">,</span> <span class="built_in">c</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">  result <span class="operator">&lt;-</span> a <span class="operator">*</span> b <span class="operator">+</span> <span class="built_in">c</span></span><br><span class="line">  print<span class="punctuation">(</span>result<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 不带参数名</span></span><br><span class="line">new.function<span class="punctuation">(</span><span class="number">5</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">,</span> <span class="number">11</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 带参数名</span></span><br><span class="line">new.function<span class="punctuation">(</span>a <span class="operator">=</span> <span class="number">11</span><span class="punctuation">,</span> b <span class="operator">=</span> <span class="number">5</span><span class="punctuation">,</span> <span class="built_in">c</span> <span class="operator">=</span> <span class="number">3</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>R语言</category>
@@ -432,6 +432,40 @@ provide shell access.</code> 就表示一切正常了。 </p>
 ]]></content>
       <categories>
         <category>研究与论文写作</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>配置Microsoft Store等软件绕过V2ray全局代理</title>
+    <url>/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<p>原文：<br><a href="https://zhuanlan.zhihu.com/p/413730301">https://zhuanlan.zhihu.com/p/413730301</a>  </p>
+<p>最近的v2rayN似乎是只有全局代理，在这种情况下Microsoft Store之类的软件都是开不了的，也没有代理相关的设置项<br>原文解决的问题是Microsoft Todo无法联网，试了一下Store的问题也可以用这个方案解决。</p>
+<span id="more"></span>
+<p>步骤：  </p>
+<ol>
+<li><p>Win+R 打开注册表编辑器</p>
+<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-77f3efc74e26e0a738678b19a767efac_1440w.jpg" class="" title="img1">
+</li>
+<li><p>进入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">计算机\HKEY_CURRENT_USER\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</span><br></pre></td></tr></table></figure>
+<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-e18cf593652070899f48832323a7c8a4_1440w.jpg" class="" title="img2">
+</li>
+<li><p>在 Mappings 上右键点击查找，搜索内容为 WindowsStore</p>
+<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-baaafb22c5d1928dad9a532613221906_1440w.jpg" class="" title="img3">
+</li>
+<li><p>把搜索到的目录名复制下来</p>
+<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-0ab3d39783a8a816b830f25a5810473b_r.jpg" class="" title="img4">
+</li>
+<li><p>管理员权限打开powershell，输入以下指令，-p= 之后的值即为刚刚复制的目录名（图为powerline）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1609473798-1231923017-684268153-4268514328-882773646-2760585773-1760938157</span><br></pre></td></tr></table></figure>
+<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-92844002ce1952197dac0dbccdd56a8d_1440w.png" class="" title="img5">
+</li>
+<li><p>Enter，没了</p>
+<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-3c7fcc1d3edf55a9f3f328254f0257a6_1440w.jpg" class="" title="img6">
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>计算机软件问题</category>
       </categories>
   </entry>
 </search>

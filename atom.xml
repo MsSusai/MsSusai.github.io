@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-08-02T12:51:01.296Z</updated>
+  <updated>2022-08-04T14:16:14.896Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>配置Microsoft Store等软件绕过V2ray全局代理</title>
+    <link href="http://example.com/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/"/>
+    <id>http://example.com/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/</id>
+    <published>2022-08-04T13:57:10.000Z</published>
+    <updated>2022-08-04T14:16:14.896Z</updated>
+    
+    <content type="html"><![CDATA[<p>原文：<br><a href="https://zhuanlan.zhihu.com/p/413730301">https://zhuanlan.zhihu.com/p/413730301</a>  </p><p>最近的v2rayN似乎是只有全局代理，在这种情况下Microsoft Store之类的软件都是开不了的，也没有代理相关的设置项<br>原文解决的问题是Microsoft Todo无法联网，试了一下Store的问题也可以用这个方案解决。</p><span id="more"></span><p>步骤：  </p><ol><li><p>Win+R 打开注册表编辑器</p><img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-77f3efc74e26e0a738678b19a767efac_1440w.jpg" class="" title="img1"></li><li><p>进入</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">计算机\HKEY_CURRENT_USER\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</span><br></pre></td></tr></table></figure><img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-e18cf593652070899f48832323a7c8a4_1440w.jpg" class="" title="img2"></li><li><p>在 Mappings 上右键点击查找，搜索内容为 WindowsStore</p><img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-baaafb22c5d1928dad9a532613221906_1440w.jpg" class="" title="img3"></li><li><p>把搜索到的目录名复制下来</p><img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-0ab3d39783a8a816b830f25a5810473b_r.jpg" class="" title="img4"></li><li><p>管理员权限打开powershell，输入以下指令，-p= 之后的值即为刚刚复制的目录名（图为powerline）</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1609473798-1231923017-684268153-4268514328-882773646-2760585773-1760938157</span><br></pre></td></tr></table></figure><img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-92844002ce1952197dac0dbccdd56a8d_1440w.png" class="" title="img5"></li><li><p>Enter，没了</p><img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-3c7fcc1d3edf55a9f3f328254f0257a6_1440w.jpg" class="" title="img6"></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;原文：&lt;br&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/413730301&quot;&gt;https://zhuanlan.zhihu.com/p/413730301&lt;/a&gt;  &lt;/p&gt;
+&lt;p&gt;最近的v2rayN似乎是只有全局代理，在这种情况下Microsoft Store之类的软件都是开不了的，也没有代理相关的设置项&lt;br&gt;原文解决的问题是Microsoft Todo无法联网，试了一下Store的问题也可以用这个方案解决。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="计算机软件问题" scheme="http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6%E9%97%AE%E9%A2%98/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>文献综述怎么写</title>
