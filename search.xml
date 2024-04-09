@@ -81,6 +81,28 @@ provide shell access.</code> 就表示一切正常了。 </p>
       </categories>
   </entry>
   <entry>
+    <title>R语言第五次课</title>
+    <url>/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/</url>
+    <content><![CDATA[<h1 id="第五次课—R数据处理"><a href="#第五次课—R数据处理" class="headerlink" title="第五次课—R数据处理"></a>第五次课—R数据处理</h1><ul>
+<li>变量创建</li>
+<li>变量删除</li>
+</ul>
+<span id="more"></span>
+<hr>
+<h3 id="变量的创建与删除"><a href="#变量的创建与删除" class="headerlink" title="变量的创建与删除"></a>变量的创建与删除</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建dataframe</span></span><br><span class="line">mydata <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span>x1 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">6</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">                     x2 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">8</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># dataframe添加列，列运算</span></span><br><span class="line">mydata<span class="operator">$</span><span class="built_in">sum</span> <span class="operator">&lt;-</span> mydata<span class="operator">$</span>x1 <span class="operator">+</span> mydata<span class="operator">$</span>x2</span><br><span class="line">mydata<span class="operator">$</span>mean <span class="operator">&lt;-</span> <span class="punctuation">(</span>mydata<span class="operator">$</span>x1 <span class="operator">+</span> mydata<span class="operator">$</span>x2<span class="punctuation">)</span> <span class="operator">/</span> <span class="number">2</span></span><br><span class="line">print<span class="punctuation">(</span>mydata<span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line">mydata <span class="operator">&lt;-</span> transform<span class="punctuation">(</span>mydata<span class="punctuation">,</span></span><br><span class="line">                    <span class="built_in">sum</span> <span class="operator">=</span> x1 <span class="operator">+</span> x2<span class="punctuation">,</span></span><br><span class="line">                    mean <span class="operator">=</span> <span class="punctuation">(</span>x1 <span class="operator">+</span> x2<span class="punctuation">)</span> <span class="operator">/</span> <span class="number">2</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#   x1 x2 sum mean</span></span><br><span class="line"><span class="comment"># 1  2  3   5  2.5</span></span><br><span class="line"><span class="comment"># 2  2  4   6  3.0</span></span><br><span class="line"><span class="comment"># 3  6  2   8  4.0</span></span><br><span class="line"><span class="comment"># 4  4  8  12  6.0</span></span><br></pre></td></tr></table></figure>
+<h4 id="变量删除（赋值为空）"><a href="#变量删除（赋值为空）" class="headerlink" title="变量删除（赋值为空）"></a>变量删除（赋值为空）</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">mydata<span class="operator">$</span>mean <span class="operator">&lt;-</span> <span class="literal">NULL</span></span><br></pre></td></tr></table></figure>
+<hr>
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/img_33.png" class="" title="img33">
+<hr>
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/img_34.png" class="" title="img34">
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 合并用merge()函数</span></span><br><span class="line">merge<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 针对列名称不同时的合并</span></span><br><span class="line">merge<span class="punctuation">(</span>x <span class="operator">=</span> dataA<span class="punctuation">,</span></span><br><span class="line">      y <span class="operator">=</span> dataB<span class="punctuation">,</span></span><br><span class="line">      by.x <span class="operator">=</span> <span class="string">&quot;id&quot;</span><span class="punctuation">,</span></span><br><span class="line">      by.y <span class="operator">=</span> <span class="string">&quot;storyid&quot;</span><span class="punctuation">,</span></span><br><span class="line">      all.y <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># all.y是将y全列出来，如果x没有的话填上NA值</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>R语言</category>
+      </categories>
+  </entry>
+  <entry>
     <title>R语言第一次课</title>
     <url>/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%80%E6%AC%A1%E8%AF%BE/</url>
     <content><![CDATA[<h1 id="第一次课—R语言入门"><a href="#第一次课—R语言入门" class="headerlink" title="第一次课—R语言入门"></a>第一次课—R语言入门</h1><ul>
@@ -133,6 +155,72 @@ provide shell access.</code> 就表示一切正常了。 </p>
       </categories>
   </entry>
   <entry>
+    <title>R语言第二次课</title>
+    <url>/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/</url>
+    <content><![CDATA[<h1 id="第二次课—R的对象"><a href="#第二次课—R的对象" class="headerlink" title="第二次课—R的对象"></a>第二次课—R的对象</h1><ul>
+<li><code>rep()</code> 重复函数</li>
+<li><code>seq()</code> 序列函数</li>
+<li>向量索引</li>
+<li>缺失值处理</li>
+<li>矩阵塑形</li>
+<li>矩阵运算</li>
+<li>数组创建</li>
+<li>列表</li>
+<li>数据框</li>
+</ul>
+<span id="more"></span>
+<hr>
+<p><code>rep()</code> 重复函数</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">data4 <span class="operator">&lt;-</span> <span class="built_in">rep</span><span class="punctuation">(</span><span class="number">2</span><span class="operator">:</span><span class="number">5</span><span class="punctuation">,</span> times <span class="operator">=</span> <span class="number">4</span><span class="punctuation">)</span> <span class="comment"># 重复函数</span></span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">2 3 4 5 2 3 4 5 2 3 4 5 2 3 4 5</span><br></pre></td></tr></table></figure>
+<hr>
+<p><code>seq()</code> 序列函数</p>
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">data5 <span class="operator">&lt;-</span> seq<span class="punctuation">(</span>from <span class="operator">=</span> <span class="number">3</span><span class="punctuation">,</span> to <span class="operator">=</span> <span class="number">21</span><span class="punctuation">,</span> by <span class="operator">=</span> <span class="number">3</span><span class="punctuation">)</span> <span class="comment"># 序列函数</span></span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">3 6 9 12 15 18 21</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="向量索引"><a href="#向量索引" class="headerlink" title="向量索引"></a>向量索引</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_6.png" class="" title="img6">
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">data1 <span class="operator">&lt;-</span> data1<span class="punctuation">[</span><span class="operator">-</span><span class="number">1</span><span class="punctuation">]</span> <span class="comment"># -表示去除第一个数</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="例题：产生一个1，2，5分别出现5，10，5次的向量"><a href="#例题：产生一个1，2，5分别出现5，10，5次的向量" class="headerlink" title="例题：产生一个1，2，5分别出现5，10，5次的向量"></a>例题：产生一个1，2，5分别出现5，10，5次的向量</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">data6 <span class="operator">&lt;-</span> <span class="built_in">rep</span><span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">5</span><span class="punctuation">)</span><span class="punctuation">,</span> times <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">5</span><span class="punctuation">,</span> <span class="number">10</span><span class="punctuation">,</span> <span class="number">5</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 5 5 5 5 5</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="缺失值处理"><a href="#缺失值处理" class="headerlink" title="缺失值处理"></a>缺失值处理</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_7.png" class="" title="img7">
+<hr>
+<h3 id="矩阵塑形"><a href="#矩阵塑形" class="headerlink" title="矩阵塑形"></a>矩阵塑形</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">12</span><span class="punctuation">)</span></span><br><span class="line">a <span class="operator">&lt;-</span> matrix<span class="punctuation">(</span>a<span class="punctuation">,</span> nrow <span class="operator">=</span> <span class="number">3</span><span class="punctuation">,</span> ncol <span class="operator">=</span> <span class="number">4</span><span class="punctuation">,</span> byrow <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">)</span> <span class="comment"># 生成矩阵3x4</span></span><br><span class="line"><span class="built_in">dim</span><span class="punctuation">(</span>a<span class="punctuation">)</span> <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">,</span> <span class="number">6</span><span class="punctuation">)</span> <span class="comment"># 矩阵重新塑形2x6</span></span><br></pre></td></tr></table></figure>
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_8.png" class="" title="img8">
+<hr>
+<h3 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h3><ul>
+<li>矩阵的加法（A+B）</li>
+<li>矩阵的减法（A-B）</li>
+<li>矩阵的各元素的乘法（A*B）</li>
+<li>矩阵相乘（A%*%C）</li>
+<li>矩阵转置 t()<br>例如：t(A)</li>
+<li>矩阵求解 solve()<br>例如：求解DX=A中的X，可以使用solve(D,A)</li>
+<li>矩阵的特征值和特征向量 eigen()<br>例如：E&lt;-eigen(D)</li>
+</ul>
+<hr>
+<h3 id="数组创建"><a href="#数组创建" class="headerlink" title="数组创建"></a>数组创建</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_10.png" class="" title="img10">
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">data <span class="operator">&lt;-</span> array<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">30</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="built_in">dim</span> <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">,</span> <span class="number">5</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<p>结果：<br><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_12.png" class="" title="img12"></p>
+<hr>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_13.png" class="" title="img13">
+<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">data <span class="operator">&lt;-</span> <span class="built_in">list</span><span class="punctuation">(</span>a <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">)</span><span class="punctuation">,</span> b <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;one&quot;</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="built_in">c</span> <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span> d <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3i</span> <span class="operator">+</span> <span class="number">4</span><span class="punctuation">,</span> <span class="number">9i</span> <span class="operator">-</span> <span class="number">9</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_15.png" class="" title="img15">
+<p>每列元素可以不同，但是列内元素必须相同</p>
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_16.png" class="" title="img16">
+<hr>
+<h3 id="数据框"><a href="#数据框" class="headerlink" title="数据框"></a>数据框</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_17.png" class="" title="img17">
+<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_18.png" class="" title="img18">
+<p>数据框列引用也可以 <code>x[,2]</code>,就不用<code>x[[2]]</code>索引了</p>
+]]></content>
+      <categories>
+        <category>R语言</category>
+      </categories>
+  </entry>
+  <entry>
     <title>R语言第三次课</title>
     <url>/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E6%AC%A1%E8%AF%BE/</url>
     <content><![CDATA[<h1 id="第三次课—R常用函数"><a href="#第三次课—R常用函数" class="headerlink" title="第三次课—R常用函数"></a>第三次课—R常用函数</h1><ul>
@@ -171,28 +259,6 @@ provide shell access.</code> 就表示一切正常了。 </p>
       </categories>
   </entry>
   <entry>
-    <title>R语言第五次课</title>
-    <url>/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/</url>
-    <content><![CDATA[<h1 id="第五次课—R数据处理"><a href="#第五次课—R数据处理" class="headerlink" title="第五次课—R数据处理"></a>第五次课—R数据处理</h1><ul>
-<li>变量创建</li>
-<li>变量删除</li>
-</ul>
-<span id="more"></span>
-<hr>
-<h3 id="变量的创建与删除"><a href="#变量的创建与删除" class="headerlink" title="变量的创建与删除"></a>变量的创建与删除</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建dataframe</span></span><br><span class="line">mydata <span class="operator">&lt;-</span> data.frame<span class="punctuation">(</span>x1 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">6</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">)</span><span class="punctuation">,</span></span><br><span class="line">                     x2 <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3</span><span class="punctuation">,</span> <span class="number">4</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">8</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># dataframe添加列，列运算</span></span><br><span class="line">mydata<span class="operator">$</span><span class="built_in">sum</span> <span class="operator">&lt;-</span> mydata<span class="operator">$</span>x1 <span class="operator">+</span> mydata<span class="operator">$</span>x2</span><br><span class="line">mydata<span class="operator">$</span>mean <span class="operator">&lt;-</span> <span class="punctuation">(</span>mydata<span class="operator">$</span>x1 <span class="operator">+</span> mydata<span class="operator">$</span>x2<span class="punctuation">)</span> <span class="operator">/</span> <span class="number">2</span></span><br><span class="line">print<span class="punctuation">(</span>mydata<span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 方法二</span></span><br><span class="line">mydata <span class="operator">&lt;-</span> transform<span class="punctuation">(</span>mydata<span class="punctuation">,</span></span><br><span class="line">                    <span class="built_in">sum</span> <span class="operator">=</span> x1 <span class="operator">+</span> x2<span class="punctuation">,</span></span><br><span class="line">                    mean <span class="operator">=</span> <span class="punctuation">(</span>x1 <span class="operator">+</span> x2<span class="punctuation">)</span> <span class="operator">/</span> <span class="number">2</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment">#   x1 x2 sum mean</span></span><br><span class="line"><span class="comment"># 1  2  3   5  2.5</span></span><br><span class="line"><span class="comment"># 2  2  4   6  3.0</span></span><br><span class="line"><span class="comment"># 3  6  2   8  4.0</span></span><br><span class="line"><span class="comment"># 4  4  8  12  6.0</span></span><br></pre></td></tr></table></figure>
-<h4 id="变量删除（赋值为空）"><a href="#变量删除（赋值为空）" class="headerlink" title="变量删除（赋值为空）"></a>变量删除（赋值为空）</h4><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">mydata<span class="operator">$</span>mean <span class="operator">&lt;-</span> <span class="literal">NULL</span></span><br></pre></td></tr></table></figure>
-<hr>
-<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/img_33.png" class="" title="img33">
-<hr>
-<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%94%E6%AC%A1%E8%AF%BE/img_34.png" class="" title="img34">
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 合并用merge()函数</span></span><br><span class="line">merge<span class="punctuation">(</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># 针对列名称不同时的合并</span></span><br><span class="line">merge<span class="punctuation">(</span>x <span class="operator">=</span> dataA<span class="punctuation">,</span></span><br><span class="line">      y <span class="operator">=</span> dataB<span class="punctuation">,</span></span><br><span class="line">      by.x <span class="operator">=</span> <span class="string">&quot;id&quot;</span><span class="punctuation">,</span></span><br><span class="line">      by.y <span class="operator">=</span> <span class="string">&quot;storyid&quot;</span><span class="punctuation">,</span></span><br><span class="line">      all.y <span class="operator">=</span> <span class="literal">TRUE</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment"># all.y是将y全列出来，如果x没有的话填上NA值</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>R语言</category>
-      </categories>
-  </entry>
-  <entry>
     <title>linux常用命令</title>
     <url>/2022/11/29/linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p>一些linux的常用命令</p>
@@ -211,6 +277,103 @@ provide shell access.</code> 就表示一切正常了。 </p>
 <h2 id="查看显卡"><a href="#查看显卡" class="headerlink" title="查看显卡"></a>查看显卡</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvidia-smi</span><br></pre></td></tr></table></figure>
 <h2 id="查看内存"><a href="#查看内存" class="headerlink" title="查看内存"></a>查看内存</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">free -h</span><br></pre></td></tr></table></figure>
 <h2 id="查看硬盘"><a href="#查看硬盘" class="headerlink" title="查看硬盘"></a>查看硬盘</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">df -h # 查看磁盘信息</span><br><span class="line">du -sh # 查看当前目录下各个文件占用大小</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>计算机软件问题</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>linux相关软件安装</title>
+    <url>/2022/11/20/linux%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p>在云服务器linux系统下安装一些常用的软件所涉及到的指令<br>使用系统为Ubuntu-18.04<br>云服务器平台为微软的azure</p>
+<span id="more"></span>
+<h1 id="ubuntu系统和软件更新"><a href="#ubuntu系统和软件更新" class="headerlink" title="ubuntu系统和软件更新"></a>ubuntu系统和软件更新</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update  </span><br><span class="line">sudo apt upgrade</span><br><span class="line">sudo apt install build-essential</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="安装R语言"><a href="#安装R语言" class="headerlink" title="安装R语言"></a>安装R语言</h1><p>网址：<a href="https://cran.r-project.org/bin/linux/ubuntu/">https://cran.r-project.org/bin/linux/ubuntu/</a>  </p>
+<p>安装依赖<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># update indices</span></span><br><span class="line">sudo apt update -qq</span><br><span class="line"><span class="comment"># install two helper packages we need</span></span><br><span class="line">sudo apt install --no-install-recommends software-properties-common dirmngr</span><br><span class="line"><span class="comment"># add the signing key (by Michael Rutter) for these repos</span></span><br><span class="line"><span class="comment"># To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc </span></span><br><span class="line"><span class="comment"># Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9</span></span><br><span class="line">wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo <span class="built_in">tee</span> -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc</span><br><span class="line"><span class="comment"># add the R 4.0 repo from CRAN -- adjust &#x27;focal&#x27; to &#x27;groovy&#x27; or &#x27;bionic&#x27; as needed</span></span><br><span class="line">sudo add-apt-repository <span class="string">&quot;deb https://cloud.r-project.org/bin/linux/ubuntu <span class="subst">$(lsb_release -cs)</span>-cran40/&quot;</span></span><br></pre></td></tr></table></figure><br>安装最新版R语言，添加CRAN<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install --no-install-recommends r-base</span><br><span class="line">sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+</span><br></pre></td></tr></table></figure></p>
+<p>使用BiocManager安装R包<br>网址：<a href="https://www.jianshu.com/p/d46580eb52c6">https://www.jianshu.com/p/d46580eb52c6</a><br><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">install.packages<span class="punctuation">(</span><span class="string">&quot;BiocManager&quot;</span><span class="punctuation">)</span></span><br><span class="line">library<span class="punctuation">(</span><span class="string">&quot;BiocManager&quot;</span><span class="punctuation">)</span></span><br><span class="line">BiocManager<span class="operator">::</span>install<span class="punctuation">(</span><span class="string">&quot;ggplot2&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure></p>
+<p>使用rvcheck更新R包<br><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">install.packages<span class="punctuation">(</span><span class="string">&quot;rvcheck&quot;</span><span class="punctuation">)</span></span><br><span class="line">library<span class="punctuation">(</span><span class="string">&quot;rvcheck&quot;</span><span class="punctuation">)</span></span><br><span class="line">rvcheck<span class="operator">::</span>update_all<span class="punctuation">(</span>check_R <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">,</span>which <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;CRAN&quot;</span><span class="punctuation">,</span><span class="string">&quot;BioC&quot;</span><span class="punctuation">,</span><span class="string">&quot;github&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="安装blast"><a href="#安装blast" class="headerlink" title="安装blast"></a>安装blast</h1><p>最新版blast网址：<a href="https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/">https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/</a><br>安装及使用教程网址：<a href="https://zhuanlan.zhihu.com/p/556816065">https://zhuanlan.zhihu.com/p/556816065</a><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -c ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.13.0+-x64-linux.tar.gz</span><br><span class="line">tar -zxvf ncbi-blast-2.13.0+-x64-linux.tar.gz</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="安装anaconda"><a href="#安装anaconda" class="headerlink" title="安装anaconda"></a>安装anaconda</h1><p>网址：<a href="https://cloud.tencent.com/developer/article/1649008">https://cloud.tencent.com/developer/article/1649008</a><br>安装：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -P /tmp https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh</span><br><span class="line">bash /tmp/Anaconda3-2020.02-Linux-x86_64.sh</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure><br>升级conda<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update conda</span><br><span class="line">conda update anaconda</span><br><span class="line">conda update --all</span><br></pre></td></tr></table></figure><br>添加bioconda站点，可以在网址内搜寻包<br>网址：<a href="https://bioconda.github.io/index.html">https://bioconda.github.io/index.html</a><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --add channels defaults</span><br><span class="line">conda config --add channels bioconda</span><br><span class="line">conda config --add channels conda-forge</span><br><span class="line">conda config --<span class="built_in">set</span> channel_priority strict</span><br></pre></td></tr></table></figure><br>anaconda搜寻包<br>网址：<a href="https://anaconda.org/">https://anaconda.org/</a></p>
+<hr>
+<h1 id="配置apache，php和postgresql"><a href="#配置apache，php和postgresql" class="headerlink" title="配置apache，php和postgresql"></a>配置apache，php和postgresql</h1><p>网址：<a href="https://itc-engineering-blog.netlify.app/blogs/i-hna4_wx">https://itc-engineering-blog.netlify.app/blogs/i-hna4_wx</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install apache2</span><br><span class="line">sudo apt -y install postgresql postgresql-contrib</span><br><span class="line">sudo apt -y install software-properties-common</span><br><span class="line">sudo apt -y install php8.0 php8.0-gd php8.0-mbstring php8.0-common</span><br><span class="line">sudo apt -y install php8.0-pgsql</span><br><span class="line">sudo apt -y install curl</span><br><span class="line">sudo apt -y install php8.0-curl</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在root用户下执行</span></span><br><span class="line"><span class="built_in">mkdir</span> /var/lib/postgresql/data</span><br><span class="line"><span class="built_in">chown</span> postgres:postgres /var/lib/postgresql/data</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入postgresql，看一下postgresql版本</span></span><br><span class="line">su - postgres</span><br><span class="line"><span class="comment"># 根据版本改变路径</span></span><br><span class="line">/usr/lib/postgresql/10/bin/initdb --encoding=<span class="string">&#x27;UTF-8&#x27;</span> -D /var/lib/postgresql/data</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<p>检查版本<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">php -v</span><br><span class="line">apache2 -v</span><br><span class="line">su - postgres -c <span class="string">&quot;/usr/lib/postgresql/12/bin/postmaster -V&quot;</span></span><br><span class="line">curl -V</span><br></pre></td></tr></table></figure></p>
+<p>创建文件<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vi /var/www/html/info.php</span><br></pre></td></tr></table></figure><br>输入<br><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  <span class="title function_ invoke__">phpinfo</span>();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>重启apache服务<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">service apache2 restart</span><br></pre></td></tr></table></figure><br>输入公网ip查看界面<br><img src="/2022/11/20/linux%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/ubuntu-php.jpg" class="" title="成功界面"></p>
+]]></content>
+      <categories>
+        <category>计算机软件问题</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>文献综述怎么写</title>
+    <url>/2022/08/02/%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0%E6%80%8E%E4%B9%88%E5%86%99/</url>
+    <content><![CDATA[<ul>
+<li>文献综述可以分为两种类型</li>
+</ul>
+<ol>
+<li>了解这个领域的研究主题、理论、方法</li>
+<li>写论文所需要完成的文献综述</li>
+</ol>
+<ul>
+<li>文献综述写作划分为两种风格</li>
+</ul>
+<ol>
+<li>列举总结型</li>
+<li>夹叙夹议型</li>
+</ol>
+<ul>
+<li>文献综述与论文研究内容的关系</li>
+</ul>
+<span id="more"></span>
+<h1 id="文献综述可以分为两种类型："><a href="#文献综述可以分为两种类型：" class="headerlink" title="文献综述可以分为两种类型："></a>文献综述可以分为两种类型：</h1><ol>
+<li>在初识一个领域之时，为了了解这个领域的研究主题、理论、方法等等  </li>
+<li>在确定论文写作主题之后，写论文所需要完成的文献综述（论文中的一部分）  </li>
+</ol>
+<h1 id="文献综述写作划分为两种风格："><a href="#文献综述写作划分为两种风格：" class="headerlink" title="文献综述写作划分为两种风格："></a>文献综述写作划分为两种风格：</h1><ol>
+<li>列举总结型<br>适合长篇幅，针对某一个综述类别，举例说明，并在最后总结述评<br>A学者基于xx理论提出xx方法得出xx结论；B学者基于xx理论提出xx方法得出xx结论等等。总而言之，现有研究已经在xx方面取得了xx成果，但是xx研究还存在不足之处</li>
+<li>夹叙夹议型<br>适合短篇幅，将相同类型、相同研究对象、相同研究方法、相同理论基础等等具有共性的文献放在一起进行总结述评<br>针对xx研究有（a，b，c学者）已经有xx成果  </li>
+</ol>
+<p>“综”要综合阅读，列举多篇文献；“述”要进行阐述或评述  </p>
+<h1 id="文献综述与论文研究内容的关系"><a href="#文献综述与论文研究内容的关系" class="headerlink" title="文献综述与论文研究内容的关系"></a>文献综述与论文研究内容的关系</h1><p>论文的核心在于什么？在于创新<br>创新的根本在于什么？在于跟别人研究的不同与改进<br>文献综述的最根本作用是什么？在于告诉我们别人研究的不足在哪？我们下一步就是针对这个干点什么…  </p>
+]]></content>
+      <categories>
+        <category>研究与论文写作</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>配置Microsoft Store等软件绕过V2ray全局代理</title>
+    <url>/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<p>原文：<br><a href="https://zhuanlan.zhihu.com/p/413730301">https://zhuanlan.zhihu.com/p/413730301</a>  </p>
+<p>最近的v2rayN似乎是只有全局代理，在这种情况下Microsoft Store之类的软件都是开不了的，也没有代理相关的设置项<br>原文解决的问题是Microsoft Todo无法联网，试了一下Store的问题也可以用这个方案解决。</p>
+<span id="more"></span>
+<p>步骤：  </p>
+<ol>
+<li><p>Win+R 打开注册表编辑器</p>
+<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-77f3efc74e26e0a738678b19a767efac_1440w.jpg" class="" title="img1">
+</li>
+<li><p>进入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">计算机\HKEY_CURRENT_USER\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</span><br></pre></td></tr></table></figure>
+<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-e18cf593652070899f48832323a7c8a4_1440w.jpg" class="" title="img2">
+</li>
+<li><p>在 Mappings 上右键点击查找，搜索内容为 WindowsStore</p>
+<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-baaafb22c5d1928dad9a532613221906_1440w.jpg" class="" title="img3">
+</li>
+<li><p>把搜索到的目录名复制下来</p>
+<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-0ab3d39783a8a816b830f25a5810473b_r.jpg" class="" title="img4">
+</li>
+<li><p>管理员权限打开powershell，输入以下指令，-p= 之后的值即为刚刚复制的目录名（图为powerline）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1609473798-1231923017-684268153-4268514328-882773646-2760585773-1760938157</span><br></pre></td></tr></table></figure>
+<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-92844002ce1952197dac0dbccdd56a8d_1440w.png" class="" title="img5">
+</li>
+<li><p>Enter，没了</p>
+<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-3c7fcc1d3edf55a9f3f328254f0257a6_1440w.jpg" class="" title="img6">
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>计算机软件问题</category>
@@ -313,135 +476,6 @@ provide shell access.</code> 就表示一切正常了。 </p>
       </categories>
   </entry>
   <entry>
-    <title>R语言第二次课</title>
-    <url>/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/</url>
-    <content><![CDATA[<h1 id="第二次课—R的对象"><a href="#第二次课—R的对象" class="headerlink" title="第二次课—R的对象"></a>第二次课—R的对象</h1><ul>
-<li><code>rep()</code> 重复函数</li>
-<li><code>seq()</code> 序列函数</li>
-<li>向量索引</li>
-<li>缺失值处理</li>
-<li>矩阵塑形</li>
-<li>矩阵运算</li>
-<li>数组创建</li>
-<li>列表</li>
-<li>数据框</li>
-</ul>
-<span id="more"></span>
-<hr>
-<p><code>rep()</code> 重复函数</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">data4 <span class="operator">&lt;-</span> <span class="built_in">rep</span><span class="punctuation">(</span><span class="number">2</span><span class="operator">:</span><span class="number">5</span><span class="punctuation">,</span> times <span class="operator">=</span> <span class="number">4</span><span class="punctuation">)</span> <span class="comment"># 重复函数</span></span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">2 3 4 5 2 3 4 5 2 3 4 5 2 3 4 5</span><br></pre></td></tr></table></figure>
-<hr>
-<p><code>seq()</code> 序列函数</p>
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">data5 <span class="operator">&lt;-</span> seq<span class="punctuation">(</span>from <span class="operator">=</span> <span class="number">3</span><span class="punctuation">,</span> to <span class="operator">=</span> <span class="number">21</span><span class="punctuation">,</span> by <span class="operator">=</span> <span class="number">3</span><span class="punctuation">)</span> <span class="comment"># 序列函数</span></span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">3 6 9 12 15 18 21</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="向量索引"><a href="#向量索引" class="headerlink" title="向量索引"></a>向量索引</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_6.png" class="" title="img6">
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">data1 <span class="operator">&lt;-</span> data1<span class="punctuation">[</span><span class="operator">-</span><span class="number">1</span><span class="punctuation">]</span> <span class="comment"># -表示去除第一个数</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="例题：产生一个1，2，5分别出现5，10，5次的向量"><a href="#例题：产生一个1，2，5分别出现5，10，5次的向量" class="headerlink" title="例题：产生一个1，2，5分别出现5，10，5次的向量"></a>例题：产生一个1，2，5分别出现5，10，5次的向量</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">data6 <span class="operator">&lt;-</span> <span class="built_in">rep</span><span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">5</span><span class="punctuation">)</span><span class="punctuation">,</span> times <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">5</span><span class="punctuation">,</span> <span class="number">10</span><span class="punctuation">,</span> <span class="number">5</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<p>输出：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 5 5 5 5 5</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="缺失值处理"><a href="#缺失值处理" class="headerlink" title="缺失值处理"></a>缺失值处理</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_7.png" class="" title="img7">
-<hr>
-<h3 id="矩阵塑形"><a href="#矩阵塑形" class="headerlink" title="矩阵塑形"></a>矩阵塑形</h3><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">a <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">12</span><span class="punctuation">)</span></span><br><span class="line">a <span class="operator">&lt;-</span> matrix<span class="punctuation">(</span>a<span class="punctuation">,</span> nrow <span class="operator">=</span> <span class="number">3</span><span class="punctuation">,</span> ncol <span class="operator">=</span> <span class="number">4</span><span class="punctuation">,</span> byrow <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">)</span> <span class="comment"># 生成矩阵3x4</span></span><br><span class="line"><span class="built_in">dim</span><span class="punctuation">(</span>a<span class="punctuation">)</span> <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">,</span> <span class="number">6</span><span class="punctuation">)</span> <span class="comment"># 矩阵重新塑形2x6</span></span><br></pre></td></tr></table></figure>
-<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_8.png" class="" title="img8">
-<hr>
-<h3 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h3><ul>
-<li>矩阵的加法（A+B）</li>
-<li>矩阵的减法（A-B）</li>
-<li>矩阵的各元素的乘法（A*B）</li>
-<li>矩阵相乘（A%*%C）</li>
-<li>矩阵转置 t()<br>例如：t(A)</li>
-<li>矩阵求解 solve()<br>例如：求解DX=A中的X，可以使用solve(D,A)</li>
-<li>矩阵的特征值和特征向量 eigen()<br>例如：E&lt;-eigen(D)</li>
-</ul>
-<hr>
-<h3 id="数组创建"><a href="#数组创建" class="headerlink" title="数组创建"></a>数组创建</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_10.png" class="" title="img10">
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">data <span class="operator">&lt;-</span> array<span class="punctuation">(</span><span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">30</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="built_in">dim</span> <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">2</span><span class="punctuation">,</span> <span class="number">5</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<p>结果：<br><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_12.png" class="" title="img12"></p>
-<hr>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_13.png" class="" title="img13">
-<figure class="highlight r"><table><tr><td class="code"><pre><span class="line">data <span class="operator">&lt;-</span> <span class="built_in">list</span><span class="punctuation">(</span>a <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">1</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">,</span> <span class="number">3</span><span class="punctuation">)</span><span class="punctuation">,</span> b <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;one&quot;</span><span class="punctuation">,</span> <span class="number">2</span><span class="punctuation">)</span><span class="punctuation">,</span> <span class="built_in">c</span> <span class="operator">=</span> <span class="built_in">T</span><span class="punctuation">,</span> d <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="number">3i</span> <span class="operator">+</span> <span class="number">4</span><span class="punctuation">,</span> <span class="number">9i</span> <span class="operator">-</span> <span class="number">9</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure>
-<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_15.png" class="" title="img15">
-<p>每列元素可以不同，但是列内元素必须相同</p>
-<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_16.png" class="" title="img16">
-<hr>
-<h3 id="数据框"><a href="#数据框" class="headerlink" title="数据框"></a>数据框</h3><img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_17.png" class="" title="img17">
-<img src="/2022/07/21/R%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%AF%BE/img_18.png" class="" title="img18">
-<p>数据框列引用也可以 <code>x[,2]</code>,就不用<code>x[[2]]</code>索引了</p>
-]]></content>
-      <categories>
-        <category>R语言</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>linux相关软件安装</title>
-    <url>/2022/11/20/linux%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<p>在云服务器linux系统下安装一些常用的软件所涉及到的指令<br>使用系统为Ubuntu-18.04<br>云服务器平台为微软的azure</p>
-<span id="more"></span>
-<h1 id="ubuntu系统和软件更新"><a href="#ubuntu系统和软件更新" class="headerlink" title="ubuntu系统和软件更新"></a>ubuntu系统和软件更新</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt update  </span><br><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="安装R语言"><a href="#安装R语言" class="headerlink" title="安装R语言"></a>安装R语言</h1><p>网址：<a href="https://cran.r-project.org/bin/linux/ubuntu/">https://cran.r-project.org/bin/linux/ubuntu/</a>  </p>
-<p>安装依赖<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># update indices</span></span><br><span class="line">sudo apt update -qq</span><br><span class="line"><span class="comment"># install two helper packages we need</span></span><br><span class="line">sudo apt install --no-install-recommends software-properties-common dirmngr</span><br><span class="line"><span class="comment"># add the signing key (by Michael Rutter) for these repos</span></span><br><span class="line"><span class="comment"># To verify key, run gpg --show-keys /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc </span></span><br><span class="line"><span class="comment"># Fingerprint: E298A3A825C0D65DFD57CBB651716619E084DAB9</span></span><br><span class="line">wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | sudo <span class="built_in">tee</span> -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc</span><br><span class="line"><span class="comment"># add the R 4.0 repo from CRAN -- adjust &#x27;focal&#x27; to &#x27;groovy&#x27; or &#x27;bionic&#x27; as needed</span></span><br><span class="line">sudo add-apt-repository <span class="string">&quot;deb https://cloud.r-project.org/bin/linux/ubuntu <span class="subst">$(lsb_release -cs)</span>-cran40/&quot;</span></span><br></pre></td></tr></table></figure><br>安装最新版R语言，添加CRAN<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install --no-install-recommends r-base</span><br><span class="line">sudo add-apt-repository ppa:c2d4u.team/c2d4u4.0+</span><br></pre></td></tr></table></figure></p>
-<p>使用BiocManager安装R包<br>网址：<a href="https://www.jianshu.com/p/d46580eb52c6">https://www.jianshu.com/p/d46580eb52c6</a><br><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">install.packages<span class="punctuation">(</span><span class="string">&quot;BiocManager&quot;</span><span class="punctuation">)</span></span><br><span class="line">library<span class="punctuation">(</span><span class="string">&quot;BiocManager&quot;</span><span class="punctuation">)</span></span><br><span class="line">BiocManager<span class="operator">::</span>install<span class="punctuation">(</span><span class="string">&quot;ggplot2&quot;</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure></p>
-<p>使用rvcheck更新R包<br><figure class="highlight r"><table><tr><td class="code"><pre><span class="line">install.packages<span class="punctuation">(</span><span class="string">&quot;rvcheck&quot;</span><span class="punctuation">)</span></span><br><span class="line">library<span class="punctuation">(</span><span class="string">&quot;rvcheck&quot;</span><span class="punctuation">)</span></span><br><span class="line">rvcheck<span class="operator">::</span>update_all<span class="punctuation">(</span>check_R <span class="operator">=</span> <span class="literal">FALSE</span><span class="punctuation">,</span>which <span class="operator">=</span> <span class="built_in">c</span><span class="punctuation">(</span><span class="string">&quot;CRAN&quot;</span><span class="punctuation">,</span><span class="string">&quot;BioC&quot;</span><span class="punctuation">,</span><span class="string">&quot;github&quot;</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br></pre></td></tr></table></figure></p>
-<hr>
-<h1 id="安装blast"><a href="#安装blast" class="headerlink" title="安装blast"></a>安装blast</h1><p>最新版blast网址：<a href="https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/">https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/</a><br>安装及使用教程网址：<a href="https://zhuanlan.zhihu.com/p/556816065">https://zhuanlan.zhihu.com/p/556816065</a><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -c ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.13.0+-x64-linux.tar.gz</span><br><span class="line">tar -zxvf ncbi-blast-2.13.0+-x64-linux.tar.gz</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h1 id="安装anaconda"><a href="#安装anaconda" class="headerlink" title="安装anaconda"></a>安装anaconda</h1><p>网址：<a href="https://cloud.tencent.com/developer/article/1649008">https://cloud.tencent.com/developer/article/1649008</a><br>安装：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -P /tmp https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh</span><br><span class="line">bash /tmp/Anaconda3-2020.02-Linux-x86_64.sh</span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure><br>升级conda<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda update conda</span><br><span class="line">conda update anaconda</span><br><span class="line">conda update --all</span><br></pre></td></tr></table></figure><br>添加bioconda站点，可以在网址内搜寻包<br>网址：<a href="https://bioconda.github.io/index.html">https://bioconda.github.io/index.html</a><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda config --add channels defaults</span><br><span class="line">conda config --add channels bioconda</span><br><span class="line">conda config --add channels conda-forge</span><br><span class="line">conda config --<span class="built_in">set</span> channel_priority strict</span><br></pre></td></tr></table></figure><br>anaconda搜寻包<br>网址：<a href="https://anaconda.org/">https://anaconda.org/</a></p>
-<hr>
-<h1 id="配置apache，php和postgresql"><a href="#配置apache，php和postgresql" class="headerlink" title="配置apache，php和postgresql"></a>配置apache，php和postgresql</h1><p>网址：<a href="https://itc-engineering-blog.netlify.app/blogs/i-hna4_wx">https://itc-engineering-blog.netlify.app/blogs/i-hna4_wx</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install apache2</span><br><span class="line">sudo apt -y install postgresql postgresql-contrib</span><br><span class="line">sudo apt -y install software-properties-common</span><br><span class="line">sudo apt -y install php8.0 php8.0-gd php8.0-mbstring php8.0-common</span><br><span class="line">sudo apt -y install php8.0-pgsql</span><br><span class="line">sudo apt -y install curl</span><br><span class="line">sudo apt -y install php8.0-curl</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在root用户下执行</span></span><br><span class="line"><span class="built_in">mkdir</span> /var/lib/postgresql/data</span><br><span class="line"><span class="built_in">chown</span> postgres:postgres /var/lib/postgresql/data</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入postgresql，看一下postgresql版本</span></span><br><span class="line">su - postgres</span><br><span class="line"><span class="comment"># 根据版本改变路径</span></span><br><span class="line">/usr/lib/postgresql/10/bin/initdb --encoding=<span class="string">&#x27;UTF-8&#x27;</span> -D /var/lib/postgresql/data</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<p>检查版本<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">php -v</span><br><span class="line">apache2 -v</span><br><span class="line">su - postgres -c <span class="string">&quot;/usr/lib/postgresql/12/bin/postmaster -V&quot;</span></span><br><span class="line">curl -V</span><br></pre></td></tr></table></figure></p>
-<p>创建文件<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vi /var/www/html/info.php</span><br></pre></td></tr></table></figure><br>输入<br><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  <span class="title function_ invoke__">phpinfo</span>();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>重启apache服务<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">service apache2 restart</span><br></pre></td></tr></table></figure><br>输入公网ip查看界面<br><img src="/2022/11/20/linux%E7%9B%B8%E5%85%B3%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/ubuntu-php.jpg" class="" title="成功界面"></p>
-]]></content>
-      <categories>
-        <category>计算机软件问题</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>文献综述怎么写</title>
-    <url>/2022/08/02/%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0%E6%80%8E%E4%B9%88%E5%86%99/</url>
-    <content><![CDATA[<ul>
-<li>文献综述可以分为两种类型</li>
-</ul>
-<ol>
-<li>了解这个领域的研究主题、理论、方法</li>
-<li>写论文所需要完成的文献综述</li>
-</ol>
-<ul>
-<li>文献综述写作划分为两种风格</li>
-</ul>
-<ol>
-<li>列举总结型</li>
-<li>夹叙夹议型</li>
-</ol>
-<ul>
-<li>文献综述与论文研究内容的关系</li>
-</ul>
-<span id="more"></span>
-<h1 id="文献综述可以分为两种类型："><a href="#文献综述可以分为两种类型：" class="headerlink" title="文献综述可以分为两种类型："></a>文献综述可以分为两种类型：</h1><ol>
-<li>在初识一个领域之时，为了了解这个领域的研究主题、理论、方法等等  </li>
-<li>在确定论文写作主题之后，写论文所需要完成的文献综述（论文中的一部分）  </li>
-</ol>
-<h1 id="文献综述写作划分为两种风格："><a href="#文献综述写作划分为两种风格：" class="headerlink" title="文献综述写作划分为两种风格："></a>文献综述写作划分为两种风格：</h1><ol>
-<li>列举总结型<br>适合长篇幅，针对某一个综述类别，举例说明，并在最后总结述评<br>A学者基于xx理论提出xx方法得出xx结论；B学者基于xx理论提出xx方法得出xx结论等等。总而言之，现有研究已经在xx方面取得了xx成果，但是xx研究还存在不足之处</li>
-<li>夹叙夹议型<br>适合短篇幅，将相同类型、相同研究对象、相同研究方法、相同理论基础等等具有共性的文献放在一起进行总结述评<br>针对xx研究有（a，b，c学者）已经有xx成果  </li>
-</ol>
-<p>“综”要综合阅读，列举多篇文献；“述”要进行阐述或评述  </p>
-<h1 id="文献综述与论文研究内容的关系"><a href="#文献综述与论文研究内容的关系" class="headerlink" title="文献综述与论文研究内容的关系"></a>文献综述与论文研究内容的关系</h1><p>论文的核心在于什么？在于创新<br>创新的根本在于什么？在于跟别人研究的不同与改进<br>文献综述的最根本作用是什么？在于告诉我们别人研究的不足在哪？我们下一步就是针对这个干点什么…  </p>
-]]></content>
-      <categories>
-        <category>研究与论文写作</category>
-      </categories>
-  </entry>
-  <entry>
     <title>研究初期寻找文献与思路的方法</title>
     <url>/2022/08/02/%E7%A0%94%E7%A9%B6%E5%88%9D%E6%9C%9F%E5%AF%BB%E6%89%BE%E6%96%87%E7%8C%AE%E4%B8%8E%E6%80%9D%E8%B7%AF%E7%9A%84%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<p>问题：导师说去看xxx领域的文章，找一下思路</p>
@@ -483,40 +517,6 @@ provide shell access.</code> 就表示一切正常了。 </p>
 ]]></content>
       <categories>
         <category>研究与论文写作</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>配置Microsoft Store等软件绕过V2ray全局代理</title>
-    <url>/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/</url>
-    <content><![CDATA[<p>原文：<br><a href="https://zhuanlan.zhihu.com/p/413730301">https://zhuanlan.zhihu.com/p/413730301</a>  </p>
-<p>最近的v2rayN似乎是只有全局代理，在这种情况下Microsoft Store之类的软件都是开不了的，也没有代理相关的设置项<br>原文解决的问题是Microsoft Todo无法联网，试了一下Store的问题也可以用这个方案解决。</p>
-<span id="more"></span>
-<p>步骤：  </p>
-<ol>
-<li><p>Win+R 打开注册表编辑器</p>
-<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-77f3efc74e26e0a738678b19a767efac_1440w.jpg" class="" title="img1">
-</li>
-<li><p>进入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">计算机\HKEY_CURRENT_USER\SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppContainer\Mappings</span><br></pre></td></tr></table></figure>
-<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-e18cf593652070899f48832323a7c8a4_1440w.jpg" class="" title="img2">
-</li>
-<li><p>在 Mappings 上右键点击查找，搜索内容为 WindowsStore</p>
-<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-baaafb22c5d1928dad9a532613221906_1440w.jpg" class="" title="img3">
-</li>
-<li><p>把搜索到的目录名复制下来</p>
-<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-0ab3d39783a8a816b830f25a5810473b_r.jpg" class="" title="img4">
-</li>
-<li><p>管理员权限打开powershell，输入以下指令，-p= 之后的值即为刚刚复制的目录名（图为powerline）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CheckNetIsolation.exe loopbackexempt -a -p=S-1-15-2-1609473798-1231923017-684268153-4268514328-882773646-2760585773-1760938157</span><br></pre></td></tr></table></figure>
-<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-92844002ce1952197dac0dbccdd56a8d_1440w.png" class="" title="img5">
-</li>
-<li><p>Enter，没了</p>
-<img src="/2022/08/04/%E9%85%8D%E7%BD%AEMicrosoft-Store%E7%AD%89%E8%BD%AF%E4%BB%B6%E7%BB%95%E8%BF%87V2ray%E5%85%A8%E5%B1%80%E4%BB%A3%E7%90%86/v2-3c7fcc1d3edf55a9f3f328254f0257a6_1440w.jpg" class="" title="img6">
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>计算机软件问题</category>
       </categories>
   </entry>
 </search>
